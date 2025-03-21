@@ -1,4 +1,5 @@
-This repository contains course labs, demos, and machine learning training scripts\
+This repository contains course labs, demos, and machine learning training scripts
+
 📂 MSDS-603-Repo  
 │── 📂 labs            # Jupyter notebooks for labs and demos  
 │── 📂 data            # Datasets used in training and evaluation  
