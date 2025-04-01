@@ -1,0 +1,22 @@
+{
+  "dataframe_split": {
+    "columns": [
+      "Age",
+      "Gender",
+      "BloodPressure",
+      "Cholesterol",
+      "HeartRate",
+      "QuantumPatternFeature"
+    ],
+    "data": [
+      [
+        73,
+        1,
+        141,
+        280,
+        87,
+        8.101487904
+      ]
+    ]
+  }
+}

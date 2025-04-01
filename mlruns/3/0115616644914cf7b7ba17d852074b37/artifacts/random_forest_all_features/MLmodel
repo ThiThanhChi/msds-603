@@ -1,0 +1,28 @@
+artifact_path: random_forest_all_features
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.10.16
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.5.1
+mlflow_version: 2.15.1
+model_size_bytes: 145689
+model_uuid: fca3bb34d3354a31b791309200dcc706
+run_id: 0115616644914cf7b7ba17d852074b37
+signature:
+  inputs: '[{"type": "double", "name": "Age", "required": true}, {"type": "double",
+    "name": "Gender", "required": true}, {"type": "double", "name": "BloodPressure",
+    "required": true}, {"type": "double", "name": "Cholesterol", "required": true},
+    {"type": "double", "name": "HeartRate", "required": true}, {"type": "double",
+    "name": "QuantumPatternFeature", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+utc_time_created: '2025-03-21 07:08:21.471400'
