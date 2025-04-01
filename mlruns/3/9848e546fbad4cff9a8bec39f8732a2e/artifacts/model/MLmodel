@@ -1,0 +1,33 @@
+artifact_path: model
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.10.16
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.5.1
+mlflow_version: 2.15.1
+model_size_bytes: 2497519
+model_uuid: 97a2eb1916884163937315d82a847ba8
+run_id: 9848e546fbad4cff9a8bec39f8732a2e
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_payload.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "long", "name": "Age", "required": true}, {"type": "long", "name":
+    "Gender", "required": true}, {"type": "long", "name": "BloodPressure", "required":
+    true}, {"type": "long", "name": "Cholesterol", "required": true}, {"type": "long",
+    "name": "HeartRate", "required": true}, {"type": "double", "name": "QuantumPatternFeature",
+    "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+utc_time_created: '2025-03-22 20:21:34.768287'

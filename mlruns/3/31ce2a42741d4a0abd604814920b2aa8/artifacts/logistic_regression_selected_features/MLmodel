@@ -1,0 +1,26 @@
+artifact_path: logistic_regression_selected_features
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.10.16
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.5.1
+mlflow_version: 2.15.1
+model_size_bytes: 875
+model_uuid: 0dab38fc2ff448128609854566c6c2c4
+run_id: 31ce2a42741d4a0abd604814920b2aa8
+signature:
+  inputs: '[{"type": "double", "name": "Age", "required": true}, {"type": "double",
+    "name": "Cholesterol", "required": true}, {"type": "double", "name": "QuantumPatternFeature",
+    "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+utc_time_created: '2025-03-21 07:08:24.897985'
