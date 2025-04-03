@@ -33,3 +33,19 @@ stages:
       hash: md5
       md5: adf63b6ce20f7ee74f63d5dabb325226
       size: 10829967
+  preprocess:
+    cmd: python src/preprocessing.py
+    deps:
+    - path: data/heart_dataset.csv
+      hash: md5
+      md5: 4ef3030e5d4b4264265a6118a099bd3c
+      size: 15119
+    - path: src/preprocessing.py
+      hash: md5
+      md5: 89d35d7c355ffdb40bb3e114659d0d90
+      size: 703
+    outs:
+    - path: data/processed_heart_dataset.csv
+      hash: md5
+      md5: 23e9b3ddb69b4f4f053fc618475557a3
+      size: 51005
