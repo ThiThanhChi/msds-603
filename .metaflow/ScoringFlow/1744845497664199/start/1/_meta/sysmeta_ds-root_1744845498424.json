@@ -1,0 +1,1 @@
+{"flow_id": "ScoringFlow", "run_number": "1744845497664199", "step_name": "start", "task_id": "1", "field_name": "ds-root", "type": "ds-root", "value": "/Users/chinguyen/Desktop/USF-MSDS/msds-603/mlops/.metaflow", "tags": ["attempt_id:0"], "user_name": "chinguyen", "ts_epoch": 1744845498424}
