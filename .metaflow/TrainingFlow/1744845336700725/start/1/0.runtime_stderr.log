@@ -1,0 +1,40 @@
+[MFLOG|0|2025-04-16T23:15:38.151281Z|runtime|102c2aa0-5796-4b14-b3b7-79e7f224986c]<flow TrainingFlow step start> failed:
+[MFLOG|0|2025-04-16T23:15:38.156409Z|runtime|b3b2eda3-d38a-4d3d-9204-aad2e423e443]    Internal error
+[MFLOG|0|2025-04-16T23:15:38.157285Z|runtime|df274459-dc73-404c-80c5-fb5794c204c1]Traceback (most recent call last):
+[MFLOG|0|2025-04-16T23:15:38.157350Z|runtime|5e371d69-3923-4991-b3a5-f004eea9073e]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/cli.py", line 611, in main
+[MFLOG|0|2025-04-16T23:15:38.157398Z|runtime|a22bfabc-4121-4b47-94c5-52e30216ddcf]    start(auto_envvar_prefix="METAFLOW", obj=state)
+[MFLOG|0|2025-04-16T23:15:38.157435Z|runtime|96ad650f-d479-4b3a-8f2a-0d439cb9e4dc]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 829, in __call__
+[MFLOG|0|2025-04-16T23:15:38.157475Z|runtime|78cacb14-ea77-4a45-a068-f4bfdfcb481a]    return self.main(args, kwargs)
+[MFLOG|0|2025-04-16T23:15:38.157506Z|runtime|eb54fb54-2e80-4c0d-b512-acd72a513fc1]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 782, in main
+[MFLOG|0|2025-04-16T23:15:38.157540Z|runtime|a550a05d-6dd0-4330-b4e2-12a6b0476495]    rv = self.invoke(ctx)
+[MFLOG|0|2025-04-16T23:15:38.157576Z|runtime|1cf2f237-2f1b-4f9c-8291-8036e7a03a48]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/cli_components/utils.py", line 69, in invoke
+[MFLOG|0|2025-04-16T23:15:38.157607Z|runtime|6050b625-e80d-4cba-81fe-3887845fc836]    return _process_result(sub_ctx.command.invoke(sub_ctx))
+[MFLOG|0|2025-04-16T23:15:38.157671Z|runtime|992bede5-6df1-4008-ab1e-4ade09cbc64d]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 1066, in invoke
+[MFLOG|0|2025-04-16T23:15:38.157701Z|runtime|09fa3315-7fee-4536-ad63-05e2e2500f24]    return ctx.invoke(self.callback, ctx.params)
+[MFLOG|0|2025-04-16T23:15:38.157734Z|runtime|357bd650-223b-474c-9d68-d9de4019005a]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 610, in invoke
+[MFLOG|0|2025-04-16T23:15:38.157767Z|runtime|bfb1f63d-7c5d-43c1-bd8e-3198e476f8c6]    return callback(args, kwargs)
+[MFLOG|0|2025-04-16T23:15:38.303929Z|runtime|06962844-71ee-42bc-8499-d2db815f66e1]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/tracing/__init__.py", line 27, in wrapper_func
+[MFLOG|0|2025-04-16T23:15:38.304125Z|runtime|c5d8ecda-5129-4463-bfd3-ac97c9b389f1]    return func(args, kwargs)
+[MFLOG|0|2025-04-16T23:15:38.304160Z|runtime|b729132f-cb9c-401e-ab6f-9946955a50e0]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/_vendor/click/decorators.py", line 21, in new_func
+[MFLOG|0|2025-04-16T23:15:38.304187Z|runtime|14041c79-a9cc-4f22-9b46-e0fa9db3140a]    return f(get_current_context(), args, kwargs)
+[MFLOG|0|2025-04-16T23:15:38.304214Z|runtime|afd0fef0-0a76-4bcd-af5a-40b6e2a9a51a]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/cli_components/step_cmd.py", line 167, in step
+[MFLOG|0|2025-04-16T23:15:38.304243Z|runtime|c28cad08-30f5-451f-974b-ec8f81b40f54]    task.run_step(
+[MFLOG|0|2025-04-16T23:15:38.304270Z|runtime|ec4c1331-cacd-40b5-ac47-e4ab28591240]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/task.py", line 672, in run_step
+[MFLOG|0|2025-04-16T23:15:38.304296Z|runtime|2baefccc-cafd-4fec-bd1c-89126b75ed80]    self._exec_step_function(step_func)
+[MFLOG|0|2025-04-16T23:15:38.304320Z|runtime|6d3de2d2-cf73-4d6c-94ea-97bece9f8b1f]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/task.py", line 62, in _exec_step_function
+[MFLOG|0|2025-04-16T23:15:38.304345Z|runtime|6fbe7974-582e-4bd7-9b9a-779f48aa3dc9]    step_function()
+[MFLOG|0|2025-04-16T23:15:38.304371Z|runtime|9d9f56f2-fba8-4dc9-8c45-fccf4314dcf9]  File "/Users/chinguyen/Desktop/USF-MSDS/msds-603/mlops/src/trainingflow.py", line 15, in start
+[MFLOG|0|2025-04-16T23:15:38.304399Z|runtime|94b11be1-6dc3-45d9-af68-00bd16c833a4]    data = pd.read_csv("../data/heart_dataset.csv")
+[MFLOG|0|2025-04-16T23:15:38.304424Z|runtime|afae5f19-e93f-4bdf-836d-a0ce44f946ab]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+[MFLOG|0|2025-04-16T23:15:38.304448Z|runtime|f8a2ecab-c13c-4a25-bb4e-6d9ee768176c]    return _read(filepath_or_buffer, kwds)
+[MFLOG|0|2025-04-16T23:15:38.304472Z|runtime|1799a83c-8c3a-4f6c-8bec-793c46f146f9]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+[MFLOG|0|2025-04-16T23:15:38.304496Z|runtime|9bd4b389-b0fd-456d-9458-3e3d7b23c374]    parser = TextFileReader(filepath_or_buffer, kwds)
+[MFLOG|0|2025-04-16T23:15:38.304519Z|runtime|e27710ac-a8d0-4dc8-82af-1543b0542779]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+[MFLOG|0|2025-04-16T23:15:38.304543Z|runtime|192a5cc6-f570-4b23-9738-39d2ecdb4dfb]    self._engine = self._make_engine(f, self.engine)
+[MFLOG|0|2025-04-16T23:15:38.304567Z|runtime|e0b9d014-0491-45e9-bde8-2f95efab32bd]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+[MFLOG|0|2025-04-16T23:15:38.304590Z|runtime|30d26ea5-7589-41e6-89fb-f10c9c8c7043]    self.handles = get_handle(
+[MFLOG|0|2025-04-16T23:15:38.304614Z|runtime|8f1a6d4a-8fd1-42ca-bfe6-0da6bb0ed2a7]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/pandas/io/common.py", line 873, in get_handle
+[MFLOG|0|2025-04-16T23:15:38.304644Z|runtime|a1ab31fb-7632-45fd-b14c-7f0ab4d9b119]    handle = open(
+[MFLOG|0|2025-04-16T23:15:38.304668Z|runtime|a076d90d-e8fa-4de6-a09f-e3e773d09fe7]FileNotFoundError: [Errno 2] No such file or directory: '../data/heart_dataset.csv'
+[MFLOG|0|2025-04-16T23:15:38.304695Z|runtime|66b3b82c-8581-4ce4-bd4b-725d828359f2]
+[MFLOG|0|2025-04-16T23:15:38.305241Z|runtime|659e7c8c-dfc4-439b-ab7d-43f985ca02c2]Task failed.

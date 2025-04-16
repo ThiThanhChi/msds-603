@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1744845417902
+current_stage: None
+description: ''
+last_updated_timestamp: 1744845417902
+name: BestModel-MetaflowLab
+run_id: 85e46ce9725a42f1a004a3f46037d648
+run_link: ''
+source: mlflow-artifacts:/567555065553435069/85e46ce9725a42f1a004a3f46037d648/artifacts/model
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/567555065553435069/85e46ce9725a42f1a004a3f46037d648/artifacts/model
+user_id: null
+version: 1

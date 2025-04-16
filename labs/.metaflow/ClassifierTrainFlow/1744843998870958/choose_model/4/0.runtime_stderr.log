@@ -1,0 +1,7 @@
+[MFLOG|0|2025-04-16T22:53:21.552091Z|runtime|658a0a21-f0bb-4301-8964-28bb15a3933d]2025/04/16 15:53:21 INFO mlflow.tracking.fluent: Experiment with name 'metaflow-experiment' does not exist. Creating a new experiment.
+[MFLOG|0|2025-04-16T22:53:24.335037Z|runtime|0e4ee9c0-9dd9-4b2f-bdf5-37cc2eaf9ee3]Successfully registered model 'metaflow-wine-model'.
+[MFLOG|0|2025-04-16T22:53:24.342691Z|runtime|a5f86616-f8e4-4198-bbd9-ed1b2b76faa7]2025/04/16 15:53:24 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: metaflow-wine-model, version 1
+[MFLOG|0|2025-04-16T22:53:24.342950Z|runtime|2c70d3ec-628b-443f-99f8-41960c3b684f]Created version '1' of model 'metaflow-wine-model'.
+[MFLOG|0|2025-04-16T22:53:24.343010Z|runtime|5b65652f-5f40-4c2f-aeee-91a7fd814469]2025/04/16 15:53:24 WARNING mlflow.models.model: Input example should be provided to infer model signature if the model signature is not provided when logging the model.
+[MFLOG|0|2025-04-16T22:53:24.348449Z|runtime|90138e9d-81a7-48fb-b530-6294c8310424]2025/04/16 15:53:24 INFO mlflow.tracking._tracking_service.client: 🏃 View run fearless-flea-476 at: http://127.0.0.1:5000/#/experiments/372522654197774965/runs/3b67160a247644789f4732bb9c66b260.
+[MFLOG|0|2025-04-16T22:53:24.593635Z|runtime|480f973a-7a8b-4f27-85d5-0e63ad19ef82]2025/04/16 15:53:24 INFO mlflow.tracking._tracking_service.client: 🧪 View experiment at: http://127.0.0.1:5000/#/experiments/372522654197774965.
