@@ -1,1 +1,0 @@
-{"flow_id": "TrainingFlow", "run_number": "1744845411052982", "step_name": "log_model", "task_id": "3", "field_name": "python_version", "type": "python_version", "value": "3.10.16", "tags": ["attempt_id:0"], "user_name": "chinguyen", "ts_epoch": 1744845414207}
