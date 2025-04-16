@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/372522654197774965/3b67160a247644789f4732bb9c66b260/artifacts
+end_time: 1744844004343
+entry_point_name: ''
+experiment_id: '372522654197774965'
+lifecycle_stage: active
+run_id: 3b67160a247644789f4732bb9c66b260
+run_name: fearless-flea-476
+run_uuid: 3b67160a247644789f4732bb9c66b260
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744844002032
+status: 3
+tags: []
+user_id: chinguyen

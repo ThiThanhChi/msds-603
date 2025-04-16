@@ -1,0 +1,1 @@
+{"flow_id": "ClassifierTrainFlow", "run_number": "1744843684535959", "step_name": "choose_model", "task_id": "4", "field_name": "python_version", "type": "python_version", "value": "3.10.16", "tags": ["attempt_id:0"], "user_name": "chinguyen", "ts_epoch": 1744843688172}

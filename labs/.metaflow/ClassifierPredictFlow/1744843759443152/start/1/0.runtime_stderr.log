@@ -1,0 +1,34 @@
+[MFLOG|0|2025-04-16T22:49:19.603032Z|runtime|9b9d89ed-1af8-4122-bb74-4ffec8cf5bda]<flow ClassifierPredictFlow step start> failed:
+[MFLOG|0|2025-04-16T22:49:19.607526Z|runtime|59820220-f817-40b1-8cef-9e6fc66400a9]    Internal error
+[MFLOG|0|2025-04-16T22:49:19.608045Z|runtime|b31156b0-13fc-4cf9-bf3d-56405d3eaf16]Traceback (most recent call last):
+[MFLOG|0|2025-04-16T22:49:19.608088Z|runtime|7c830204-cc01-4c58-961b-510cc6810fd3]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/cli.py", line 611, in main
+[MFLOG|0|2025-04-16T22:49:19.608145Z|runtime|c4745be7-5c03-4984-8ad9-a665aa03e104]    start(auto_envvar_prefix="METAFLOW", obj=state)
+[MFLOG|0|2025-04-16T22:49:19.608192Z|runtime|1cb8c0a9-587f-438a-a414-d4dd8732d132]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 829, in __call__
+[MFLOG|0|2025-04-16T22:49:19.608253Z|runtime|e04955dc-e714-414e-8fa8-7d7281784f11]    return self.main(args, kwargs)
+[MFLOG|0|2025-04-16T22:49:19.628681Z|runtime|32dde98e-ada2-4d27-b2d1-6f502f4a0a42]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 782, in main
+[MFLOG|0|2025-04-16T22:49:19.628867Z|runtime|d066897d-7451-45f1-976c-ad571241b405]    rv = self.invoke(ctx)
+[MFLOG|0|2025-04-16T22:49:19.628901Z|runtime|de4d3aff-ff81-4994-973c-490060997ea6]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/cli_components/utils.py", line 69, in invoke
+[MFLOG|0|2025-04-16T22:49:19.628930Z|runtime|7975383a-0519-4616-be21-959c0d75f09d]    return _process_result(sub_ctx.command.invoke(sub_ctx))
+[MFLOG|0|2025-04-16T22:49:19.628958Z|runtime|63f24144-35ef-482c-8cc1-18fb26fc4acc]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 1066, in invoke
+[MFLOG|0|2025-04-16T22:49:19.628982Z|runtime|dfc59a99-61ba-4a4a-981e-fe261e6be8bf]    return ctx.invoke(self.callback, ctx.params)
+[MFLOG|0|2025-04-16T22:49:19.629008Z|runtime|a5d3e439-4166-41b6-b316-325306d54502]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 610, in invoke
+[MFLOG|0|2025-04-16T22:49:19.629032Z|runtime|b8cb0dda-23cd-4632-8997-2eb0c74e2b97]    return callback(args, kwargs)
+[MFLOG|0|2025-04-16T22:49:19.629058Z|runtime|92740c37-0035-4753-8d5f-012601a1b03e]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/tracing/__init__.py", line 27, in wrapper_func
+[MFLOG|0|2025-04-16T22:49:19.629089Z|runtime|d4a759d5-a582-475a-8c1c-111b803221dc]    return func(args, kwargs)
+[MFLOG|0|2025-04-16T22:49:19.629116Z|runtime|dbad7c5e-cdf6-486d-8184-46484f5ceb32]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/_vendor/click/decorators.py", line 21, in new_func
+[MFLOG|0|2025-04-16T22:49:19.629140Z|runtime|e01bd88d-6cd4-46d1-8aec-ab008ae8d443]    return f(get_current_context(), args, kwargs)
+[MFLOG|0|2025-04-16T22:49:19.629163Z|runtime|929aa18e-3912-4ce9-8358-c01c0bf1bec6]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/cli_components/step_cmd.py", line 167, in step
+[MFLOG|0|2025-04-16T22:49:19.629188Z|runtime|9f2b65d0-16bf-4b59-9c4f-9097e454bee2]    task.run_step(
+[MFLOG|0|2025-04-16T22:49:19.629213Z|runtime|0f2cfd35-3784-499d-b574-25443df903db]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/task.py", line 672, in run_step
+[MFLOG|0|2025-04-16T22:49:19.629238Z|runtime|7bcf8d9f-086f-4693-a32e-2961cdabaed1]    self._exec_step_function(step_func)
+[MFLOG|0|2025-04-16T22:49:19.629261Z|runtime|38229927-bfd5-4a02-a4a3-f2718fdac867]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/task.py", line 62, in _exec_step_function
+[MFLOG|0|2025-04-16T22:49:19.629289Z|runtime|3fb26ef9-6e97-4f72-a806-140a2c2f184d]    step_function()
+[MFLOG|0|2025-04-16T22:49:19.629314Z|runtime|9bdd516a-5e03-401c-9599-e2e9380d087d]  File "/Users/chinguyen/Desktop/USF-MSDS/msds-603/mlops/labs/classifier_predict.py", line 10, in start
+[MFLOG|0|2025-04-16T22:49:19.629338Z|runtime|72178018-8de0-4b72-a992-1789221e50d4]    self.model = run['end'].task.data.model
+[MFLOG|0|2025-04-16T22:49:19.629363Z|runtime|84574e78-ad25-495a-8f3e-9cb5814d6f04]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/client/core.py", line 2396, in __getitem__
+[MFLOG|0|2025-04-16T22:49:19.629389Z|runtime|533b2afb-9cc2-4240-ae36-120c7ea887c6]    return super(Run, self).__getitem__(name)
+[MFLOG|0|2025-04-16T22:49:19.629412Z|runtime|9b40b8b1-40c5-4f07-8a59-70c7c6e87739]  File "/opt/homebrew/anaconda3/envs/mlops/lib/python3.10/site-packages/metaflow/client/core.py", line 516, in __getitem__
+[MFLOG|0|2025-04-16T22:49:19.629438Z|runtime|5d1b3176-d731-494c-851e-09702a6bf089]    raise KeyError(id)
+[MFLOG|0|2025-04-16T22:49:19.629461Z|runtime|273c1610-e227-4a25-a321-ffefeafaa3a7]KeyError: 'end'
+[MFLOG|0|2025-04-16T22:49:19.629486Z|runtime|0ad5e10c-0d7c-4733-814a-7b0bd19ba82f]
+[MFLOG|0|2025-04-16T22:49:19.629887Z|runtime|7864f7a1-d235-4f75-828d-723c2f031d1f]Task failed.
