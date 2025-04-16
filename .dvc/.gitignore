@@ -6,3 +6,9 @@
 /mlruns
 /mlflow
 /.metaflow 
+# .gitignore
+.dvc/
+.ipynb_checkpoints/
+.metaflow/
+data/adult.data
+
