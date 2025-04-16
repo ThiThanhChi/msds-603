@@ -1,0 +1,39 @@
+# Enable required services
+gcloud services enable run.googleapis.com sqladmin.googleapis.com secretmanager.googleapis.com artifactregistry.googleapis.com
+
+# Create a Cloud Storage bucket
+gsutil mb -l us-west2 gs://<your-bucket-name>
+gsutil cp /dev/null gs://<your-bucket-name>/mlruns/.init
+
+# Create Cloud SQL instance
+gcloud sql instances create msds-603 --database-version=POSTGRES_15 --tier=db-f1-micro --region=us-west2
+
+# Create database
+gcloud sql databases create msds-603 --instance=msds-603
+
+# Create user
+gcloud sql users create tnguyen123 --instance=msds-603 --password=<your-password>
+
+# Store secrets
+gcloud secrets create access_keys --data-file=./secrets/credentials.json
+echo "postgresql+psycopg2://tnguyen123:<password>@34.94.198.218:5432/msds-603" | gcloud secrets versions add database_url --data-file=-
+echo "gs://<your-bucket-name>/mlruns" | gcloud secrets versions add bucket_url --data-file=-
+
+# Build Docker image
+docker build --platform linux/amd64 -t us-west2-docker.pkg.dev/msds-603-456700/msds-603/mlflow:v1 .
+
+# Push Docker image
+docker push us-west2-docker.pkg.dev/msds-603-456700/msds-603/mlflow:v1
+
+# Deploy to Cloud Run
+gcloud run deploy "msds-603" \
+  --image "us-west2-docker.pkg.dev/msds-603-456700/msds-603/mlflow:v1" \
+  --region "us-west2" \
+  --service-account "msds-603@msds-603-456700.iam.gserviceaccount.com" \
+  --update-secrets=/secrets/credentials=access_keys:latest \
+  --update-secrets=POSTGRESQL_URL=database_url:latest \
+  --update-secrets=STORAGE_URL=bucket_url:latest \
+  --memory 2Gi \
+  --allow-unauthenticated \
+  --port 8080 \
+  --timeout=600s
