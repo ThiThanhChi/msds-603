@@ -1,3 +1,23 @@
 /config.local
 /tmp
 /cache
+/.dvc/tmp
+/.dvc/cache
+/mlruns
+/mlflow
+/.metaflow 
+# .gitignore
+.dvc/
+.ipynb_checkpoints/
+.metaflow/
+data/adult.data
+/adult.data
+/adult.test
+/pipeline.pkl
+/processed_train_data.csv
+/processed_test_data.csv
+/processed_heart_dataset.csv
+/heart_dataset.csv
+/mlruns
+/.metaflow
+
