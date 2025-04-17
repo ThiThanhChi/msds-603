@@ -63,17 +63,15 @@ class TrainingFlow(FlowSpec):
     @step
     def predict(self):
         """
-        Use the trained model to predict on the test set and show sample outputs.
+        Use the trained model to predict on the test set.
         """
         predictions = self.model.predict(self.X_test)
         results = pd.DataFrame({
             'Actual': self.y_test.values,
             'Predicted': predictions
         })
-
         print("Sample predictions:")
         print(results.head())
-
         self.next(self.end)
 
     @step
@@ -82,7 +80,6 @@ class TrainingFlow(FlowSpec):
         Final step: confirm training, logging, and prediction is complete.
         """
         print("Flow complete: Model trained, registered, and predictions made.")
-
 
 if __name__ == '__main__':
     TrainingFlow()
