@@ -1,7 +1,0 @@
-[MFLOG|0|2025-04-16T23:16:55.630272Z|runtime|20190652-3b4b-4dd4-8957-9e1e9bd192ab]2025/04/16 16:16:55 INFO mlflow.tracking.fluent: Experiment with name 'mlflow-metaflow-lab-6' does not exist. Creating a new experiment.
-[MFLOG|0|2025-04-16T23:16:57.881976Z|runtime|064a16dc-7983-4b58-a83e-adc56a594e0b]Successfully registered model 'BestModel-MetaflowLab'.
-[MFLOG|0|2025-04-16T23:16:57.906686Z|runtime|0f3d0c07-cd6a-43b3-b1fc-637b314e5dcf]2025/04/16 16:16:57 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: BestModel-MetaflowLab, version 1
-[MFLOG|0|2025-04-16T23:16:57.915307Z|runtime|1c0336f9-3d30-43de-b224-f1af65c96e38]Created version '1' of model 'BestModel-MetaflowLab'.
-[MFLOG|0|2025-04-16T23:16:57.915500Z|runtime|db881971-4159-45f3-ad00-408e83e80185]2025/04/16 16:16:57 WARNING mlflow.models.model: Input example should be provided to infer model signature if the model signature is not provided when logging the model.
-[MFLOG|0|2025-04-16T23:16:57.915694Z|runtime|4d620314-86f9-42ab-a35c-57e95cd1df8d]2025/04/16 16:16:57 INFO mlflow.tracking._tracking_service.client: 🏃 View run nimble-goose-735 at: http://127.0.0.1:5000/#/experiments/567555065553435069/runs/85e46ce9725a42f1a004a3f46037d648.
-[MFLOG|0|2025-04-16T23:16:58.168409Z|runtime|fdd32c78-5a01-4ac5-9337-619fb00dbbe1]2025/04/16 16:16:57 INFO mlflow.tracking._tracking_service.client: 🧪 View experiment at: http://127.0.0.1:5000/#/experiments/567555065553435069.
