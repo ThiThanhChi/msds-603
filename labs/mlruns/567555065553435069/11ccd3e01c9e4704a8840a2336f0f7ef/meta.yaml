@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/567555065553435069/11ccd3e01c9e4704a8840a2336f0f7ef/artifacts
+end_time: 1744924056205
+entry_point_name: ''
+experiment_id: '567555065553435069'
+lifecycle_stage: active
+run_id: 11ccd3e01c9e4704a8840a2336f0f7ef
+run_name: likeable-calf-578
+run_uuid: 11ccd3e01c9e4704a8840a2336f0f7ef
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744924053521
+status: 3
+tags: []
+user_id: chinguyen
