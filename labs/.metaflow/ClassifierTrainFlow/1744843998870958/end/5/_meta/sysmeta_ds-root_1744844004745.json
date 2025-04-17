@@ -1,0 +1,1 @@
+{"flow_id": "ClassifierTrainFlow", "run_number": "1744843998870958", "step_name": "end", "task_id": "5", "field_name": "ds-root", "type": "ds-root", "value": "/Users/chinguyen/Desktop/USF-MSDS/msds-603/mlops/labs/.metaflow", "tags": ["attempt_id:0"], "user_name": "chinguyen", "ts_epoch": 1744844004745}
