@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1744844004339
+current_stage: None
+description: ''
+last_updated_timestamp: 1744844004339
+name: metaflow-wine-model
+run_id: 3b67160a247644789f4732bb9c66b260
+run_link: ''
+source: mlflow-artifacts:/372522654197774965/3b67160a247644789f4732bb9c66b260/artifacts/metaflow_train
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/372522654197774965/3b67160a247644789f4732bb9c66b260/artifacts/metaflow_train
+user_id: null
+version: 1

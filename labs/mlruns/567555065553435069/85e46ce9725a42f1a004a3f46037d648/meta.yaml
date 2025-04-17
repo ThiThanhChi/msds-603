@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/567555065553435069/85e46ce9725a42f1a004a3f46037d648/artifacts
+end_time: 1744845417907
+entry_point_name: ''
+experiment_id: '567555065553435069'
+lifecycle_stage: active
+run_id: 85e46ce9725a42f1a004a3f46037d648
+run_name: nimble-goose-735
+run_uuid: 85e46ce9725a42f1a004a3f46037d648
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744845415701
+status: 3
+tags: []
+user_id: chinguyen

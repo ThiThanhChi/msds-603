@@ -1,0 +1,26 @@
+artifact_path: gradient_boosting_selected_features
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.10.16
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.5.1
+mlflow_version: 2.15.1
+model_size_bytes: 61919
+model_uuid: 8e7f0d41f25a49ceb4f4b78b1d296b60
+run_id: a0c3d29cf3e64c2d9f2f6c1dc65a6a91
+signature:
+  inputs: '[{"type": "double", "name": "Age", "required": true}, {"type": "double",
+    "name": "Cholesterol", "required": true}, {"type": "double", "name": "QuantumPatternFeature",
+    "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+utc_time_created: '2025-03-21 07:08:28.843188'
