@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/567555065553435069/046f60264eef42818a537929f24c2ee2/artifacts
+end_time: 1744924211165
+entry_point_name: ''
+experiment_id: '567555065553435069'
+lifecycle_stage: active
+run_id: 046f60264eef42818a537929f24c2ee2
+run_name: omniscient-foal-371
+run_uuid: 046f60264eef42818a537929f24c2ee2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744924208396
+status: 3
+tags: []
+user_id: chinguyen
