@@ -1,0 +1,115 @@
+- GCP config name : lab8msds603
+- project name : lab-8-msds603   
+-  Create a new instance 
+gcloud sql instances create lab-8-msds603 \
+  --database-version=POSTGRES_15 \
+  --region=us-west2 \
+  --tier=db-f1-micro \
+  --storage-type=HDD \
+  --storage-size=10GB \
+  --authorized-networks=0.0.0.0/0
+- Create user and password to run instance
+gcloud sql users create metaflow-lab8-msds603 \
+  --instance=lab-8-msds603 \
+  --password=1a2b3c4d
+- Create database 
+gcloud sql databases create metaflow-lab8 --instance=lab-8-msds603
+- Create buckets 
+gcloud storage buckets create gs://metaflow-lab8-bucket
+- Create mlruns/ folder for MLflow
+echo "mlflow-init" | gsutil cp - gs://metaflow-lab8-bucket/mlruns/.init
+- Create a repository for the mlflow image
+gcloud artifacts repositories create metaflow-lab8-repo \
+  --location=us-west2 \
+  --repository-format=docker
+- Create service account 
+gcloud iam service-accounts create mlflow-lab8-sa \
+  --display-name="MLflow Lab 8 Service Account"
+- Get the project id
+gcloud config get-value project
+- Assign Roles to the Service Account
+gcloud projects add-iam-policy-binding lab-8-msds603 \
+  --member='serviceAccount:mlflow-lab8-sa@lab-8-msds603.iam.gserviceaccount.com' \
+  --role='roles/cloudsql.editor'
+gcloud projects add-iam-policy-binding lab-8-msds603 \
+  --member='serviceAccount:mlflow-lab8-sa@lab-8-msds603.iam.gserviceaccount.com' \
+  --role='roles/storage.objectAdmin'
+
+gcloud projects add-iam-policy-binding lab-8-msds603 \
+  --member='serviceAccount:mlflow-lab8-sa@lab-8-msds603.iam.gserviceaccount.com' \
+  --role='roles/secretmanager.secretAccessor'
+
+gcloud projects add-iam-policy-binding lab-8-msds603 \
+  --member='serviceAccount:mlflow-lab8-sa@lab-8-msds603.iam.gserviceaccount.com' \
+  --role='roles/artifactregistry.admin'
+
+gcloud projects add-iam-policy-binding lab-8-msds603 \
+  --member='serviceAccount:mlflow-lab8-sa@lab-8-msds603.iam.gserviceaccount.com' \
+  --role='roles/clouddeploy.serviceAgent'
+
+gcloud projects add-iam-policy-binding lab-8-msds603 \
+  --member='serviceAccount:mlflow-lab8-sa@lab-8-msds603.iam.gserviceaccount.com' \
+  --role='roles/cloudfunctions.admin'
+
+- Download a Service Account Key (for local use or Metaflow setup)
+gcloud iam service-accounts keys create key-mlflow-lab8-sa.json \
+  --iam-account=mlflow-lab8-sa@lab-8-msds603.iam.gserviceaccount.com
+
+- create a set of keys for our service account:
+gcloud iam service-accounts keys create sa-private-key.json \
+  --iam-account=mlflow-lab8-sa@lab-8-msds603.iam.gserviceaccount.com
+- create a secret
+gcloud secrets create access_keys --data-file=sa-private-key.json
+gcloud secrets create database_url
+
+echo -n "postgresql://metaflow-lab8-msds603:1a2b3c4d@34.94.34.74/metaflow-lab8" | \
+  gcloud secrets versions add database_url --data-file=-
+
+- Create Docker image
+gcloud auth configure-docker us-west2-docker.pkg.dev
+
+- Build the docker 
+docker build --platform linux/amd64 -t "us-west2-docker.pkg.dev/lab-8-msds603/metaflow-lab8-repo/mlflow:v1" .
+
+- Push the docker 
+docker push us-west2-docker.pkg.dev/lab-8-msds603/metaflow-lab8-repo/mlflow:v1
+
+- image has been built, we need to run it with Google Cloud Run
+gcloud run deploy "mlflow-tracking" \
+  --image "us-west2-docker.pkg.dev/lab-8-msds603/metaflow-lab8-repo/mlflow:v1" \
+  --region "us-west2" \
+  --service-account "mlflow-lab8-sa@lab-8-msds603.iam.gserviceaccount.com" \
+  --update-secrets=/secrets/credentials=access_keys:latest \
+  --update-secrets=POSTGRESQL_URL=database_url:latest \
+  --update-secrets=STORAGE_URL=bucket_url:latest \
+  --memory 2Gi \
+  --allow-unauthenticated \
+  --port 8080
+
+- Create the bucket_url secret
+gcloud secrets create bucket_url
+echo -n "gs://metaflow-lab8-bucket/mlruns" | \
+  gcloud secrets versions add bucket_url --data-file=-
+
+- Reset password 
+gcloud sql users set-password metaflow-lab8-msds603 \
+  --instance=lab-8-msds603 \
+  --password=1a2b3c4d
+
+- Recreate the database_url secret
+echo -n "postgresql://metaflow-lab8-msds603:1a2b3c4d@34.94.34.74/metaflow-lab8" | \
+  gcloud secrets versions add database_url --data-file=-
+
+***** essential files are in : /Users/chinguyen/Desktop/USF-MSDS/msds-603/mlflow_test
+------------------------------------------------------------------------------------------------------
+- Enable these APIs
+gcloud services enable cloudresourcemanager.googleapis.com
+gcloud services enable compute.googleapis.com
+gcloud services enable servicenetworking.googleapis.com
+gcloud services enable sqladmin.googleapis.com
+gcloud services enable container.googleapis.com
+
+
+
+
+

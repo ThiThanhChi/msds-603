@@ -4,11 +4,11 @@ import mlflow
 import mlflow.sklearn
 from sklearn.metrics import accuracy_score
 
-@conda(libraries={"pandas": "1.5.3", "scikit-learn": "1.2.2", "mlflow": "2.10.0"})
 class ScoringFlow(FlowSpec):
     model_name = Parameter("model_name", default="BestModel-MetaflowLab")
     model_stage = Parameter("model_stage", default="Production")
 
+    @conda(libraries={"pandas": "1.5.3", "scikit-learn": "1.2.2", "mlflow": "2.10.0"})
     @kubernetes(cpu=1, memory=2000)
     @timeout(seconds=600)
     @retry(times=2)
@@ -29,6 +29,7 @@ class ScoringFlow(FlowSpec):
         print(f"Loaded model from: {model_uri}")
         self.next(self.predict)
 
+    @conda(libraries={"pandas": "1.5.3", "scikit-learn": "1.2.2", "mlflow": "2.10.0"})
     @kubernetes(cpu=1, memory=2000)
     @timeout(seconds=300)
     @retry(times=2)
@@ -65,3 +66,4 @@ class ScoringFlow(FlowSpec):
 
 if __name__ == '__main__':
     ScoringFlow()
+

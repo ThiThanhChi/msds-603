@@ -1,0 +1,53 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: reddit-app
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: reddit
+#   template:
+#     metadata:
+#       labels:
+#         app: reddit
+#     spec:
+#       containers:
+#       - name: reddit-container
+#         image: reddit-fastapi-app:v3
+#         imagePullPolicy: Never
+#         ports:
+#         - containerPort: 8000
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reddit-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reddit
+  template:
+    metadata:
+      labels:
+        app: reddit
+    spec:
+      nodeSelector:
+        kubernetes.io/arch: amd64
+      containers:
+      - name: reddit-container
+        image: us-west1-docker.pkg.dev/lab9-reddit-app/reddit-repo/reddit-app:v1
+        ports:
+        - containerPort: 8000
+        resources:
+          requests:
+            cpu: "250m"
+            memory: "512Mi"
+      imagePullSecrets:
+      - name: gcr-json-key
+    
+
+
+        
+

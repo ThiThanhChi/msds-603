@@ -1,0 +1,5 @@
+streamlit==1.36.0
+scikit-learn==1.6.1
+numpy==1.26.4  # Downgraded for stability (numpy 2.x is very new)
+joblib==1.4.2
+pandas==2.1.4  # Added (likely needed for ML workflows)
